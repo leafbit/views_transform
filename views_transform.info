@@ -1,0 +1,9 @@
+name = Views Trans Form
+description = Enables view to be transformed to a form
+core = 7.x
+package = Leafbit
+dependencies[] = views
+files[] = views/views_transform_field_handler_form_field.inc
+
+# Added automatically by builddrupalmodule script
+version = 1.3

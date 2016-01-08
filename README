@@ -1,0 +1,8 @@
+Views Transform module provides a view field that can display a text or checkbox form element within a view and thus transforms the view into a form.
+
+Additionally it provides views tokens such as:
+***ARG0*** ... ***ARG(x)*** - arguments from current path.
+***VIEW_ARG0*** ... ***VIEW_ARG(x)*** - view arguments.
+***URL_USER_OR_CURRENT*** - user id from current url or current user if not found in url.
+
+Note that views system provides ***CURRENT_USER*** view token. It can be used in view filters as value.

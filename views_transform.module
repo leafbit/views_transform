@@ -1,0 +1,29 @@
+<?php
+/**
+ * @file: Enables view to be transformed to a form
+*/
+
+/**
+ * Invoke hook_views_api().
+ */
+function views_transform_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'views_transform') . '/views',
+  );
+}
+
+/**
+ * Invoke hook_views_form_alter().
+ */
+function views_transform_form_alter(&$form, &$form_state, $form_id) {
+  if (isset($form['#views_transform_php'])){
+    $code = $form['#views_transform_php'];
+    if (is_array($code)) {
+      foreach ($code as $c) eval($c);
+    } else {
+      eval($code);
+    }
+  }
+}
+
